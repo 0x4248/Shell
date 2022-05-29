@@ -6,6 +6,8 @@
 #include <array>
 #include <stdlib.h>
 
+#include "commands.h"
+
 std::string VERSION = "0.0.1";
 
 //https://stackoverflow.com/questions/478898/how-do-i-execute-a-command-and-get-the-output-of-the-command-within-c-using-po#:~:text=%23include%20%3Ciostream%3E%0A%23include%20%3Cstdexcept,throw%3B%0A%20%20%20%20%7D%0A%20%20%20%20pclose(pipe)%3B%0A%20%20%20%20return%20result%3B%0A%7D
@@ -26,11 +28,6 @@ std::string exec(const char* cmd) {
     return result;
 }
 
-void help(){
-    std::cout << "Usage: " << std::endl;
-    std::cout << "  -v: Print version" << std::endl;
-    std::cout << "  -h: Print help" << std::endl;
-}
 
 void parse(std::string command)
 {
