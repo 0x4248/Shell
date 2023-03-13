@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <string>
+#include <filesystem>
 
 #include "command.h"
 #include "help.h"
@@ -15,6 +16,14 @@ void run_input(std::string input){
     }
     else if (input == "exit"){
         exit(0);
+    }
+    else if (input.substr(0, 2) == "cd"){
+        if (input == "cd"){
+            std::filesystem::current_path(std::filesystem::current_path().parent_path());
+        }
+        else{
+            std::filesystem::current_path(input.substr(3, input.length()));
+        }
     }
     else{
         system(input.c_str());
