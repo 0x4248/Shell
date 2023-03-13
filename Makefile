@@ -26,7 +26,7 @@ init:
 	mkdir bin
 
 compile:
-	$(CC) $(CFLAGS) -std=$(STD) $(SRC)/*.cpp -o $(OUTPUT) -I $(LIB)
+	$(CC) $(CFLAGS) -std=$(STD) $(SRC)/main.cpp -o $(OUTPUT) -I $(LIB)
 
 run:
 	./$(OUTPUT)
