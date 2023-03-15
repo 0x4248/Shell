@@ -11,8 +11,11 @@
 
 
 #include "colour.h"
-
 #include "command.h"
+
+/* Define console colours */
+ascii_colours::normal normal;
+ascii_colours::bold bold;
 
 /**
  * Prints the welcome message
@@ -54,6 +57,23 @@ std::string get_current_directory(){
 }
 
 /**
+ * Formats the current directory string to make
+ * the top most folder coloured cyan and the rest
+ * of the directory coloured blue.
+ * @param directory: std::string
+ * @returns: std::string
+ */
+
+std::string format_current_directory(std::string directory){
+    std::string formatted_directory;
+    int last_slash = directory.find_last_of("/");
+    formatted_directory = directory.substr(0, last_slash + 1);
+    formatted_directory = bold.blue + formatted_directory + bold.cyan;
+    formatted_directory += directory.substr(last_slash + 1, directory.length());
+    return formatted_directory;
+}
+
+/**
  * Main function
  * @param argc: int
  * @param argv: char*
@@ -64,7 +84,7 @@ int main(int argc, char *argv[]) {
     std::string output;
     std::string input;
     while(true){
-        std::cout << get_username() << "@" << get_hostname() << ":" << get_current_directory() << "$ ";
+        std::cout << bold.green << get_username() << "@" << get_hostname() << bold.reset << ":" << format_current_directory(get_current_directory()) << bold.reset << "$ ";
         std::getline(std::cin, input);
         run_input(input);
     }
