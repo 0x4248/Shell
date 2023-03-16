@@ -55,6 +55,6 @@ void cd(std::string dir){
     dir = parse_input(dir);
     int status = change_dir(dir);
     if(status == DIR_NOT_FOUND){
-        pr_error("cd: " + dir + ": No such file or directory");
+        pr_error(dir + ": No such file or directory");
     }
 }

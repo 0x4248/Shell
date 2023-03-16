@@ -28,7 +28,7 @@ init:
 	mkdir bin
 
 compile:
-	$(CC) $(CFLAGS) -std=$(STD) $(SRC)/*.cpp -o $(OUTPUT) -I $(LIB) -I $(INCLUDE) $(INCLUDE)/commands/cd.h
+	$(CC) $(CFLAGS) -std=$(STD) $(SRC)/*.cpp $(SRC)/modules/*.cpp  -o $(OUTPUT) -I $(LIB) -I $(INCLUDE) $(INCLUDE)/commands/cd.h
 
 run:
 	./$(OUTPUT)
