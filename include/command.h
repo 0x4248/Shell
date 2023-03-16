@@ -11,7 +11,7 @@
 
 #include "help.h"
 
-#include "cd.h"
+#include "commands/cd.h"
 
 /**
  * Shell main input runner

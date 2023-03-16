@@ -8,8 +8,10 @@
 #include <iostream>
 #include <filesystem>
 
-#include "include/errno.h"
-#include "include/printsh.h"
+#include "err_no.h"
+#include "printsh.h"
+
+#include "commands/cd.h"
 
 /**
  * Parse the cd arguments

@@ -14,6 +14,8 @@ BIN = bin
 
 LIB = lib
 
+INCLUDE = include/
+
 OUTPUT = $(BIN)/shell
 
 include CFLAGS.conf
@@ -26,7 +28,7 @@ init:
 	mkdir bin
 
 compile:
-	$(CC) $(CFLAGS) -std=$(STD) $(SRC)/main.cpp -o $(OUTPUT) -I $(LIB)
+	$(CC) $(CFLAGS) -std=$(STD) $(SRC)/*.cpp -o $(OUTPUT) -I $(LIB) -I $(INCLUDE) $(INCLUDE)/commands/cd.h
 
 run:
 	./$(OUTPUT)

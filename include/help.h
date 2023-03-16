@@ -5,7 +5,7 @@
  * Help command header file
 */
 
-#include<iostream>
+#include <iostream>
 
 /**
  * Prints the help message
