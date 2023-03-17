@@ -15,6 +15,11 @@
 #include "command.h"
 #include "name.h"
 #include "dir.h"
+
+/* Config */
+#define VERSION "1.0.0"
+#define NAME "Shell++"
+
 /* Define console colours */
 ascii_colours::normal normal;
 ascii_colours::bold bold;
@@ -24,7 +29,7 @@ ascii_colours::bold bold;
  * @returns: void
  */
 void print_welcome(){
-    std::cout << "Welcome to awesomelewis2007's shell" << std::endl;
+    std::cout << bold.green << "Welcome to " << NAME << " " << VERSION << bold.reset << std::endl;
     std::cout << "Type 'help' for a list of commands" << std::endl;
 }
 
