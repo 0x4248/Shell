@@ -2,7 +2,6 @@
 # A simple shell made in C++
 # https://www.github.com/awesomelewis2007/shell
 
-
 CC = g++
 
 CFLAGS = 
@@ -18,6 +17,8 @@ INCLUDE = include/
 
 OUTPUT = $(BIN)/shell
 
+FILES = $(SRC)/*.cpp $(SRC)/modules/*.cpp $(SRC)/commands/*.cpp
+
 include CFLAGS.conf
 include STD.conf
 
@@ -28,7 +29,7 @@ init:
 	mkdir bin
 
 compile:
-	$(CC) $(CFLAGS) -std=$(STD) $(SRC)/*.cpp $(SRC)/modules/*.cpp  -o $(OUTPUT) -I $(LIB) -I $(INCLUDE) $(INCLUDE)/commands/cd.h
+	$(CC) $(CFLAGS) -std=$(STD) $(FILES) -o $(OUTPUT) -I $(LIB) -I $(INCLUDE)
 
 run:
 	./$(OUTPUT)
