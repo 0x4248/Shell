@@ -5,10 +5,7 @@
  * directory helper functions
 */
 
-#include <iostream>
-#include <filesystem>
 #include <string>
-#include <unistd.h>
 
 /**
  * Gets the current directory

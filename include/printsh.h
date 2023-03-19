@@ -4,7 +4,7 @@
  *
  * Shell verbose handler header file
 */
-#include <iostream>
+
 #include <string>
 
 /**

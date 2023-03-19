@@ -5,9 +5,8 @@
  * header for getting usernames and hostnames
 */
 
-#include <iostream>
+
 #include <string>
-#include <unistd.h>
 
 /**
  * Gets the username

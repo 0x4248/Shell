@@ -1,8 +1,8 @@
-/* Shell (help.h)
+/* Shell (help.cpp)
  * A simple shell made in C++
  * Github: https://www.github.com/awesomelewis2007/shell
  *
- * Help command header file
+ * Help command source file
 */
 
 #include <iostream>
