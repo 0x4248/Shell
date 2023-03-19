@@ -9,10 +9,6 @@
 #include <string>
 #include <filesystem>
 
-#include "help.h"
-
-#include "commands/cd.h"
-
 /**
  * Shell main input runner
  * This function runs the command that 
@@ -20,26 +16,4 @@
  * @param input: std::string
  * @returns: void
 */
-void run_input(std::string input){
-    if (input == "help"){
-        help();
-    }
-    else if (input == "exit"){
-        exit(0);
-    }
-    else if (input.substr(0, 2) == "cd"){
-        if (input.length() == 2){
-            /**
-             * If the user inputs 'cd' without a directory,
-             * then change the directory to the home directory
-            */
-            cd(getenv("HOME"));
-        }
-        else {
-            cd(input.substr(3, input.length()));
-        }
-    }
-    else{
-        system(input.c_str());
-    }
-}
+void run_input(std::string input);
