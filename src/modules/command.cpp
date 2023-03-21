@@ -8,11 +8,30 @@
 #include <iostream>
 #include <string>
 #include <filesystem>
+#include <fstream>
 
 #include "command.h"
+#include "name.h"
+#include "printsh.h"
 
 #include "commands/help.h"
 #include "commands/cd.h"
+
+
+/**
+ * Shell history saver
+ * This function saves the user's input
+ * to the history file
+ * @param input: std::string
+ * @returns: void
+*/
+void save_to_history(std::string input){
+    std::ofstream history_file;
+    std::string history_path = "/home/"+get_username()+"/.shell_history";
+    history_file.open(history_path, std::ios::app);
+    history_file << input << std::endl;
+    history_file.close();
+}
 
 /**
  * Shell main input runner
@@ -43,4 +62,5 @@ void run_input(std::string input){
     else{
         system(input.c_str());
     }
+    save_to_history(input);
 }
