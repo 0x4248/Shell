@@ -11,8 +11,6 @@ SRC = src
 
 BIN = bin
 
-LIB = lib
-
 INCLUDE = include/
 
 OUTPUT = $(BIN)/shell
@@ -29,7 +27,7 @@ init:
 	mkdir bin
 
 compile:
-	$(CC) $(CFLAGS) -std=$(STD) $(FILES) -o $(OUTPUT) -I $(LIB) -I $(INCLUDE)
+	$(CC) $(CFLAGS) -std=$(STD) $(FILES) -o $(OUTPUT) -I $(INCLUDE)
 
 run:
 	./$(OUTPUT)
