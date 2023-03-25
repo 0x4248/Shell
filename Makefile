@@ -1,37 +1,43 @@
 # Shell (Makefile)
 # A simple shell made in C++
-# https://www.github.com/awesomelewis2007/shell
+# Github:https://www.github.com/awesomelewis2007/shell
+# Main makefile
 
 CC = g++
+CFLAGS = -std=c++17 -O2 -I include
 
-CFLAGS = 
-STD = 
-
-SRC = src
+SRC = $(wildcard src/*.cpp) $(wildcard src/modules/*.cpp) $(wildcard src/commands/*.cpp)
+OBJ = $(SRC:.cpp=.o)
 
 BIN = bin
+OUTPUT = shell
 
-INCLUDE = include/
+all: init shell
 
-OUTPUT = $(BIN)/shell
+shell: $(OBJ)
+	@echo "LD $@"
+	$(CC) $(CFLAGS) -o $(BIN)/$(OUTPUT) $(OBJ)
 
-FILES = $(SRC)/*.cpp $(SRC)/modules/*.cpp $(SRC)/commands/*.cpp
-
-include CFLAGS.conf
-include STD.conf
-
-all: init compile run
+%.o: %.cpp
+	@echo "CC $@"
+	$(CC) $(CFLAGS) -o $@ -c $<
 
 init:
-	rm -rf bin
-	mkdir bin
-
-compile:
-	$(CC) $(CFLAGS) -std=$(STD) $(FILES) -o $(OUTPUT) -I $(INCLUDE)
-
-run:
-	./$(OUTPUT)
+	@echo "MKDIR" $(BIN)
+	@mkdir -p $(BIN)
 
 clean:
-	rm -rf bin
+	@echo "RM" $(OBJ) shell
+	@rm -f $(OBJ) shell
 
+help:
+	@echo "Usage: make [target]"
+	@echo "Targets:"
+	@echo "  all:    Build the shell"
+	@echo "  shell:  Build the shell"
+	@echo "  clean:  Remove all build files"
+	@echo "  help:   Display this help message"
+
+.SILENT:
+
+.PHONY: all clean
