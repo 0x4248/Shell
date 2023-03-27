@@ -25,5 +25,10 @@
  * 4 - errors, warnings, info and debug
 */
 #define LOG_LEVEL 2
+
+/**
+ * PRINTSH_LOG_TO_FILE - whether to log to a file
+ * PRINTSH_LOG_FILE_PATH - the path to the log file
+*/
 #define PRINTSH_LOG_TO_FILE false
 #define PRINTSH_LOG_FILE_PATH "shell.log"
