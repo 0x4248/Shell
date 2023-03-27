@@ -21,12 +21,22 @@
 ascii_colours::normal normal;
 ascii_colours::bold bold;
 
+
+/**
+ * parse version
+ * @returns: The version as a string
+*/
+std::string parse_version(){
+    std::string version = std::to_string(VERSION_MAJOR) + "." + std::to_string(VERSION_MINOR) + "." + std::to_string(VERSION_PATCH);
+    return version;
+}
+
 /**
  * Prints the welcome message
  * @returns: void
  */
 void print_welcome(){
-    std::cout << bold.green << "Welcome to " << NAME << " " << VERSION << bold.reset << std::endl;
+    std::cout << bold.green << "Welcome to " << NAME << " " << parse_version() << bold.reset << std::endl;
     std::cout << "Type 'help' for a list of commands" << std::endl;
 }
 
