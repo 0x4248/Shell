@@ -15,10 +15,7 @@
 #include "command.h"
 #include "name.h"
 #include "dir.h"
-
-/* Config */
-#define VERSION "1.0.0"
-#define NAME "Shell++"
+#include "config/config.h"
 
 /* Define console colours */
 ascii_colours::normal normal;

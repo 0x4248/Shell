@@ -9,6 +9,7 @@
 
 #include "colour.h"
 #include "printsh.h"
+#include "config/config.h"
 
 /**
  * printsh - print a message to the shell

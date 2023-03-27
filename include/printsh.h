@@ -7,15 +7,7 @@
 
 #include <string>
 
-/**
- * LOG_LEVEL - the log level
- * 0 - no logging
- * 1 - errors
- * 2 - errors and warnings
- * 3 - errors, warnings and info
- * 4 - errors, warnings, info and debug
-*/
-#define LOG_LEVEL 2
+
 
 
 /**
