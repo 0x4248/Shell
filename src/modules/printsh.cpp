@@ -6,6 +6,7 @@
 */
 #include <iostream>
 #include <string>
+#include <fstream>
 
 #include "colour.h"
 #include "printsh.h"
@@ -18,6 +19,12 @@
 */
 void printsh(std::string message){
     std::cout << message << std::endl;
+    if (PRINTSH_LOG_TO_FILE == true){
+        std::ofstream log_file;
+        log_file.open(PRINTSH_LOG_FILE_PATH, std::ios::app);
+        log_file << message << std::endl;
+        log_file.close();
+    }
 }
 
 /**
@@ -29,7 +36,8 @@ void pr_error(std::string message){
     ascii_colours::normal normal;
     ascii_colours::bold bold;
     if (LOG_LEVEL >= 1) {
-        std::cerr << bold.red << "Error:" << bold.reset << message << std::endl;
+        std::cerr << bold.red << "Error: " << bold.reset;
+        printsh(message);
     }
 }
 
@@ -42,7 +50,8 @@ void pr_warning(std::string message){
     ascii_colours::normal normal;
     ascii_colours::bold bold;
     if (LOG_LEVEL >= 2) {
-        std::cerr << bold.yellow << "Warning:" << bold.reset << message << std::endl;
+        std::cerr << bold.yellow << "Warning: " << bold.reset;
+        printsh(message);
     }
 }
 
@@ -55,7 +64,8 @@ void pr_info(std::string message){
     ascii_colours::normal normal;
     ascii_colours::bold bold;
     if (LOG_LEVEL >= 3) {
-        std::cerr << bold.blue << "Info:" << bold.reset << message << std::endl;
+        std::cerr << bold.blue << "Info: " << bold.reset;
+        printsh(message);
     }
 }
 
@@ -68,7 +78,8 @@ void pr_debug(std::string message){
     ascii_colours::normal normal;
     ascii_colours::bold bold;
     if (LOG_LEVEL >= 4) {
-        std::cerr << bold.magenta << "Debug:" << bold.reset << message << std::endl;
+        std::cerr << bold.magenta << "Debug: " << bold.reset;
+        printsh(message);
     }
 }
 
