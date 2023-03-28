@@ -14,12 +14,14 @@
 #include "printsh.h"
 #include "name.h"
 
+#include "config/config.h"
+
 /**
  * Prints the shell history
  * @returns: void
 */
-void show_history(){
-    std::string history_path = "/home/"+get_username()+"/.shell_history";
+int history_command(){
+    std::string history_path = "/home/"+get_username()+"/"+HISTORY_FILE_PATH;
     std::ifstream history_file(history_path);
     std::string line;
     if(history_file.is_open()){

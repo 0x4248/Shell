@@ -14,4 +14,4 @@
  * Prints the shell history
  * @returns: void
 */
-void show_history();
+int history_command();

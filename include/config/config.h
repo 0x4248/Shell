@@ -32,3 +32,7 @@
 */
 #define PRINTSH_LOG_TO_FILE false
 #define PRINTSH_LOG_FILE_PATH "shell.log"
+
+/* History */
+
+#define HISTORY_FILE_PATH ".shell_history"
