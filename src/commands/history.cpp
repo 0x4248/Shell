@@ -20,7 +20,7 @@
  * Prints the shell history
  * @returns: void
 */
-int history_command(){
+int history_command(std::string args){
     std::string history_path = "/home/"+get_username()+"/"+HISTORY_FILE_PATH;
     std::ifstream history_file(history_path);
     std::string line;

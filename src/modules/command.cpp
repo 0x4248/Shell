@@ -60,7 +60,7 @@ void run_input(std::string input){
         }
     }
     else if (input == "history"){
-        history_command();
+        history_command(input);
     }
     else{
         system(input.c_str());
