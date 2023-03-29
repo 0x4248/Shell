@@ -59,7 +59,7 @@ void run_input(std::string input){
             cd(input.substr(3, input.length()));
         }
     }
-    else if (input == "history"){
+    else if (input.substr(0, 7) == "history"){
         history_command(input);
     }
     else{
