@@ -51,7 +51,7 @@ int change_dir(std::string dir){
     }
 }
 
-void cd(std::string dir){
+void cd_command(std::string dir){
     dir = parse_input(dir);
     int status = change_dir(dir);
     if(status == DIR_NOT_FOUND){

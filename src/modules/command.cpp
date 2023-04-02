@@ -53,10 +53,10 @@ void run_input(std::string input){
              * If the user inputs 'cd' without a directory,
              * then change the directory to the home directory
             */
-            cd(getenv("HOME"));
+            cd_command(getenv("HOME"));
         }
         else {
-            cd(input.substr(3, input.length()));
+            cd_command(input.substr(3, input.length()));
         }
     }
     else{

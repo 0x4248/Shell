@@ -8,4 +8,4 @@
 #include <iostream>
 #include <filesystem>
 
-void cd(std::string dir);
+void cd_command(std::string dir);
