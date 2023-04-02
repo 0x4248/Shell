@@ -30,6 +30,11 @@ clean:
 	@echo "RM" $(OBJ) shell
 	@rm -f $(OBJ) shell
 
+clean_all: clean
+	@echo "RM" $(BIN)
+	@rm -f $(OBJ) shell
+	@rm -rf $(BIN)
+
 help:
 	@echo "Usage: make [target]"
 	@echo "Targets:"

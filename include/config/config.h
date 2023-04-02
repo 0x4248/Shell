@@ -10,10 +10,11 @@
 #define VERSION_MAJOR 1
 #define VERSION_MINOR 0
 #define VERSION_PATCH 0
+#define VERSION_NAME "Beta"
 
 /* Shell general */
 #define NAME "Shell++"
-
+#define SHOW_WELCOME_MESSAGE true
 /* Printsh */
 
 /**
@@ -32,3 +33,7 @@
 */
 #define PRINTSH_LOG_TO_FILE false
 #define PRINTSH_LOG_FILE_PATH "shell.log"
+
+/* History */
+
+#define HISTORY_FILE_PATH ".shell_history"

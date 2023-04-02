@@ -27,7 +27,7 @@ ascii_colours::bold bold;
  * @returns: The version as a string
 */
 std::string parse_version(){
-    std::string version = std::to_string(VERSION_MAJOR) + "." + std::to_string(VERSION_MINOR) + "." + std::to_string(VERSION_PATCH);
+    std::string version = std::to_string(VERSION_MAJOR) + "." + std::to_string(VERSION_MINOR) + "." + std::to_string(VERSION_PATCH) + " " + VERSION_NAME;
     return version;
 }
 
@@ -36,8 +36,10 @@ std::string parse_version(){
  * @returns: void
  */
 void print_welcome(){
-    std::cout << bold.green << "Welcome to " << NAME << " " << parse_version() << bold.reset << std::endl;
-    std::cout << "Type 'help' for a list of commands" << std::endl;
+    if (SHOW_WELCOME_MESSAGE == true){
+        std::cout << bold.green << "Welcome to " << NAME << " " << parse_version() << bold.reset << std::endl;
+        std::cout << "Type 'help' for a list of commands" << std::endl;
+    }
 }
 
 /**

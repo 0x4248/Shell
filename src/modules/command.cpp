@@ -16,7 +16,7 @@
 
 #include "commands/help.h"
 #include "commands/cd.h"
-
+#include "commands/history.h"
 
 /**
  * Shell history saver
@@ -58,6 +58,9 @@ void run_input(std::string input){
         else {
             cd_command(input.substr(3, input.length()));
         }
+    }
+    else if (input == "history"){
+        history_command(input);
     }
     else{
         system(input.c_str());
