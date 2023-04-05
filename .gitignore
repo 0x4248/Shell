@@ -36,3 +36,9 @@ bin/
 
 # log files
 *.log
+
+# C make
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
