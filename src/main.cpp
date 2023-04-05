@@ -8,7 +8,7 @@
 #include <iostream>
 #include <string>
 #include <unistd.h>
-
+#include <cstring>
 
 #include "colour.h"
 
@@ -49,6 +49,12 @@ void print_welcome(){
  * @returns: int
  */
 int main(int argc, char *argv[]) {
+    if (argc > 1){
+        if (strcmp(argv[1], "-v") == 0){
+            std::cout << parse_version() << std::endl;
+            return 0;
+        }
+    }
     print_welcome();
     std::string output;
     std::string input;
