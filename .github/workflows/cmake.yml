@@ -20,8 +20,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Create Build Environment
+      run: mkdir build && cd build
+
     - name: Build cmake
-      run: cmake .
+      run: cmake ..
     
     - name: Make
       run: make

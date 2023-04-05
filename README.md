@@ -17,8 +17,9 @@ make
 
 To build the shell, run the following commands:
 ```bash
-mkdir bin
-cmake CMakeLists.txt
+mkdir build
+cd build
+cmake ..
 make
 ```
 
