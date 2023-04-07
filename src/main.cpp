@@ -54,6 +54,17 @@ int main(int argc, char *argv[]) {
             std::cout << parse_version() << std::endl;
             return 0;
         }
+        if (strcmp(argv[1], "--config") == 0){
+            std::cout << "Config:" << std::endl;
+            std::cout << "Name:\t\t\t" << NAME << std::endl;
+            std::cout << "Version:\t\t" << parse_version() << std::endl;
+            std::cout << "Show welcome message:\t" << SHOW_WELCOME_MESSAGE << std::endl;
+            std::cout << "Log level:\t\t" << LOG_LEVEL << std::endl;
+            std::cout << "Log to file:\t\t" << PRINTSH_LOG_TO_FILE << std::endl;
+            std::cout << "Log file path:\t\t" << PRINTSH_LOG_FILE_PATH << std::endl;
+            std::cout << "History file path:\t" << HISTORY_FILE_PATH << std::endl;
+            return 0;
+        }
     }
     print_welcome();
     std::string output;
