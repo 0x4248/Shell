@@ -31,5 +31,7 @@ int history_command(std::string args){
         history_file.close();
     }else{
         pr_error("Could not open history file");
+        return 1;
     }
+    return 0;
 }
