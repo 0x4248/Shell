@@ -101,6 +101,10 @@ int history_command(std::string args){
         if (args_list[0] == "--last"){
             ret = print_last(args);
         }
+        history_file.close();
+    }else{
+        pr_error("Could not open history file");
+        return 1;
     }
-    return ret;
+    return 0;
 }
