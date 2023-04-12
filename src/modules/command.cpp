@@ -9,6 +9,10 @@
 #include <string>
 #include <filesystem>
 #include <fstream>
+#include <cstdio>
+#include <memory>
+#include <stdexcept>
+#include <array>
 
 #include "command.h"
 #include "name.h"
@@ -17,6 +21,19 @@
 #include "commands/help.h"
 #include "commands/cd.h"
 #include "commands/history.h"
+
+std::string exec(const char* cmd) {
+    std::array<char, 128> buffer;
+    std::string result;
+    std::unique_ptr<FILE, decltype(&pclose)> pipe(popen(cmd, "r"), pclose);
+    if (!pipe) {
+        throw std::runtime_error("popen() failed!");
+    }
+    while (fgets(buffer.data(), buffer.size(), pipe.get()) != nullptr) {
+        result += buffer.data();
+    }
+    return result;
+}
 
 /**
  * Shell history saver
@@ -63,7 +80,8 @@ void run_input(std::string input){
         history_command(input);
     }
     else{
-        system(input.c_str());
+        std::string output = exec(input.c_str());
+        std::cout << output;
     }
     save_to_history(input);
 }
