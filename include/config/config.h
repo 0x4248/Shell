@@ -15,6 +15,9 @@
 /* Shell general */
 #define NAME "Shell++"
 #define SHOW_WELCOME_MESSAGE true
+#define CUSTOM_WELCOME_MESSAGE false
+#define CUSTOM_WELCOME_MESSAGE_TEXT "Type 'help' for a list of commands"
+
 /* Printsh */
 
 /**
