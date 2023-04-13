@@ -92,7 +92,7 @@ int print_all(std::string args){
  * @returns: void
 */
 int history_command(std::string args){
-    int ret;
+    int ret = 0;
     std::vector<std::string> args_list = argparse(args);
     args_list.erase(args_list.begin());
     if(args_list.size() == 0){
@@ -102,5 +102,5 @@ int history_command(std::string args){
             ret = print_last(args);
         }
     }
-    return 0;
+    return ret;
 }
