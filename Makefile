@@ -39,7 +39,6 @@ help:
 	@echo "Usage: make [target]"
 	@echo "Targets:"
 	@echo "  all:    Build the shell"
-	@echo "  shell:  Build the shell"
 	@echo "  clean:  Remove all build files"
 	@echo "  help:   Display this help message"
 
