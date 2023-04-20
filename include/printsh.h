@@ -1,6 +1,8 @@
 /* Shell (printsh.h)
  * A simple shell made in C++
  * Github: https://www.github.com/awesomelewis2007/shell
+ * License: GPL-3.0
+ * By: Lewis Evans
  *
  * Shell verbose handler header file
 */

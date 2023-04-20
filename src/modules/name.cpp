@@ -1,7 +1,9 @@
 /* Shell (name.cpp)
  * A simple shell made in C++
  * Github: https://www.github.com/awesomelewis2007/shell
- *
+ * License: GPL-3.0
+ * By: Lewis Evans
+ * 
  * Functions for getting usernames and hostnames
 */
 
