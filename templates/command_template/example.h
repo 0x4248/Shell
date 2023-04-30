@@ -5,11 +5,11 @@
  * By: Lewis Evans
  *
  * Shell example command header file
-*/
+ */
 
 #include <string>
 
 /**
  * example_command - Prints hello [arg] using the printsh function
-*/
+ */
 int example_command(std::string args);

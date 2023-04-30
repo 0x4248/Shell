@@ -5,9 +5,9 @@
  * By: Lewis Evans
  *
  * Change directory command header file
-*/
+ */
 
-#include <iostream>
 #include <filesystem>
+#include <iostream>
 
 void cd_command(std::string dir);

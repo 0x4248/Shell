@@ -5,15 +5,15 @@
  * By: Lewis Evans
  *
  * Shell history command header file
-*/
+ */
 
-#include <iostream>
-#include <string>
 #include <filesystem>
 #include <fstream>
+#include <iostream>
+#include <string>
 
 /**
  * Prints the shell history
  * @returns: void
-*/
+ */
 int history_command(std::string args);

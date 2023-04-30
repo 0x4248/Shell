@@ -5,23 +5,23 @@
  * By: Lewis Evans
  *
  * Shell verbose handler source file
-*/
+ */
+#include <fstream>
 #include <iostream>
 #include <string>
-#include <fstream>
 
 #include "colour.h"
-#include "printsh.h"
 #include "config/config.h"
+#include "printsh.h"
 
 /**
  * printsh - print a message to the shell
  * @message: std::string
  * @returns: void
-*/
-void printsh(std::string message){
+ */
+void printsh(std::string message) {
     std::cout << message << std::endl;
-    if (PRINTSH_LOG_TO_FILE == true){
+    if (PRINTSH_LOG_TO_FILE == true) {
         std::ofstream log_file;
         log_file.open(PRINTSH_LOG_FILE_PATH, std::ios::app);
         log_file << message << std::endl;
@@ -33,8 +33,8 @@ void printsh(std::string message){
  * pr_error - print an error message to the shell
  * @message: std::string
  * @returns: void
-*/
-void pr_error(std::string message){
+ */
+void pr_error(std::string message) {
     ascii_colours::normal normal;
     ascii_colours::bold bold;
     if (LOG_LEVEL >= 1) {
@@ -47,8 +47,8 @@ void pr_error(std::string message){
  * pr_warning - print a warning message to the shell
  * @message: std::string
  * @returns: void
-*/
-void pr_warning(std::string message){
+ */
+void pr_warning(std::string message) {
     ascii_colours::normal normal;
     ascii_colours::bold bold;
     if (LOG_LEVEL >= 2) {
@@ -61,8 +61,8 @@ void pr_warning(std::string message){
  * pr_info - print an info message to the shell
  * @message: std::string
  * @returns: void
-*/
-void pr_info(std::string message){
+ */
+void pr_info(std::string message) {
     ascii_colours::normal normal;
     ascii_colours::bold bold;
     if (LOG_LEVEL >= 3) {
@@ -75,8 +75,8 @@ void pr_info(std::string message){
  * pr_debug - print a debug message to the shell
  * @message: std::string
  * @returns: void
-*/
-void pr_debug(std::string message){
+ */
+void pr_debug(std::string message) {
     ascii_colours::normal normal;
     ascii_colours::bold bold;
     if (LOG_LEVEL >= 4) {
@@ -84,4 +84,3 @@ void pr_debug(std::string message){
         printsh(message);
     }
 }
-

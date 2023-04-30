@@ -5,10 +5,10 @@
  * By: Lewis Evans
  *
  * Help command header file
-*/
+ */
 
 /**
  * Prints the help message
  * @returns: void
-*/
+ */
 void help();

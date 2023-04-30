@@ -5,8 +5,7 @@
  * By: Lewis Evans
  *
  * header for getting usernames and hostnames
-*/
-
+ */
 
 #include <string>
 

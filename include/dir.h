@@ -5,7 +5,7 @@
  * By: Lewis Evans
  *
  * directory helper functions
-*/
+ */
 
 #include <string>
 

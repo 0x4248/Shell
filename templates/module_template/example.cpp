@@ -5,19 +5,15 @@
  * By: Lewis Evans
  *
  * Shell example module source file
-*/
-
+ */
 
 #include <iostream>
 #include <string>
 
-#include "printsh.h"
 #include "config/config.h"
-
+#include "printsh.h"
 
 /**
  * example_function - Prints hello [arg] using the printsh function
-*/
-void example_function(std::string args){
-    printsh("hello "+args);
-}
+ */
+void example_function(std::string args) { printsh("hello " + args); }

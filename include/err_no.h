@@ -5,7 +5,7 @@
  * By: Lewis Evans
  *
  * Error codes header file
-*/
+ */
 
 /* Standard error codes */
 #define ERROR 1

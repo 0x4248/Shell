@@ -5,9 +5,9 @@
  * By: Lewis Evans
  *
  * Argument parser header file
-*/
+ */
 
-#include <vector>
 #include <string>
+#include <vector>
 
-std::vector <std::string> argparse(std::string args);
+std::vector<std::string> argparse(std::string args);

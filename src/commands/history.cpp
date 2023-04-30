@@ -5,38 +5,38 @@
  * By: Lewis Evans
  *
  * Shell history command source file
-*/
+ */
 
-#include <iostream>
-#include <string>
 #include <filesystem>
 #include <fstream>
+#include <iostream>
+#include <string>
 #include <vector>
 
-#include "commands/history.h"
-#include "printsh.h"
 #include "argparse.h"
+#include "commands/history.h"
 #include "name.h"
+#include "printsh.h"
 
 #include "config/config.h"
 
-
 /**
  * get_history - Gets the shell history
- * 
+ *
  * Gets the shell history from the history file
  * and returns it as a string each line is separated
  * by a newline character
- * 
+ *
  * @returns: std::string
-*/
-std::string get_history(){
-    std::string history_path = "/home/"+get_username()+"/"+HISTORY_FILE_PATH;
+ */
+std::string get_history() {
+    std::string history_path =
+        "/home/" + get_username() + "/" + HISTORY_FILE_PATH;
     std::ifstream history_file(history_path);
     std::string line;
     std::string history;
-    if(history_file.is_open()){
-        while(getline(history_file, line)){
+    if (history_file.is_open()) {
+        while (getline(history_file, line)) {
             history += line + "\n";
         }
         history_file.close();
@@ -46,24 +46,23 @@ std::string get_history(){
     return history;
 }
 
-
 /**
  * print_last - Prints the last command ran
  * @returns: int
-*/
-int print_last(std::string args){
+ */
+int print_last(std::string args) {
     std::string history = get_history();
-    if(history == "ERROR"){
+    if (history == "ERROR") {
         pr_error("Could not open history file");
         return 1;
     } else {
         std::vector<std::string> history_lines;
         std::stringstream ss(history);
         std::string line;
-        while(std::getline(ss, line, '\n')){
+        while (std::getline(ss, line, '\n')) {
             history_lines.push_back(line);
         }
-        if(history_lines.size() == 0){
+        if (history_lines.size() == 0) {
             pr_error("History is empty");
             return 1;
         } else {
@@ -77,10 +76,10 @@ int print_last(std::string args){
 /**
  * print_all - Prints the shell history
  * @returns: int
-*/
-int print_all(std::string args){
+ */
+int print_all(std::string args) {
     std::string history = get_history();
-    if(history == "ERROR"){
+    if (history == "ERROR") {
         pr_error("Could not open history file");
         return 1;
     } else {
@@ -92,15 +91,15 @@ int print_all(std::string args){
 /**
  * Prints the shell history
  * @returns: void
-*/
-int history_command(std::string args){
+ */
+int history_command(std::string args) {
     int ret = 0;
     std::vector<std::string> args_list = argparse(args);
     args_list.erase(args_list.begin());
-    if(args_list.size() == 0){
+    if (args_list.size() == 0) {
         ret = print_all(args);
     } else {
-        if (args_list[0] == "--last"){
+        if (args_list[0] == "--last") {
             ret = print_last(args);
         }
     }

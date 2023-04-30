@@ -5,10 +5,10 @@
  * By: Lewis Evans
  *
  * Change directory command header file
-*/
+ */
 
-#include <iostream>
 #include <filesystem>
+#include <iostream>
 
 #include "err_no.h"
 #include "printsh.h"
@@ -19,15 +19,15 @@
  * Parse the cd arguments
  * @param input: std::string
  * @returns: std::string
- * 
- * If the user types cd ~ then it will return 
- * the home directory location 
- * 
+ *
+ * If the user types cd ~ then it will return
+ * the home directory location
+ *
  * e.g cd ~ -> /root/
- * 
-*/
-std::string parse_input(std::string input){
-    if(input == "~"){
+ *
+ */
+std::string parse_input(std::string input) {
+    if (input == "~") {
         return getenv("HOME");
     } else {
         return input;
@@ -38,12 +38,12 @@ std::string parse_input(std::string input){
  * Change the current working directory
  * @param dir: std::string
  * @returns: int
- * 
+ *
  * Returns 0 on success, and DIR_NOT_FOUND on error
-*/
-int change_dir(std::string dir){
+ */
+int change_dir(std::string dir) {
     /* Change the current working directory*/
-    if(!std::filesystem::exists(dir)){
+    if (!std::filesystem::exists(dir)) {
         /* If the directory does not exist, then return an error*/
         return DIR_NOT_FOUND;
     } else {
@@ -53,10 +53,10 @@ int change_dir(std::string dir){
     }
 }
 
-void cd_command(std::string dir){
+void cd_command(std::string dir) {
     dir = parse_input(dir);
     int status = change_dir(dir);
-    if(status == DIR_NOT_FOUND){
+    if (status == DIR_NOT_FOUND) {
         pr_error(dir + ": No such file or directory");
     }
 }

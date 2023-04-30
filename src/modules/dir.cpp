@@ -5,10 +5,10 @@
  * By: Lewis Evans
  *
  * directory helper functions
-*/
+ */
 
-#include <iostream>
 #include <filesystem>
+#include <iostream>
 #include <string>
 #include <unistd.h>
 
@@ -18,7 +18,7 @@
  * Gets the current directory
  * @returns: std::string
  */
-std::string get_current_directory(){
+std::string get_current_directory() {
     char cwd[1024];
     cwd[1023] = '\0';
     getcwd(cwd, 1023);
@@ -32,7 +32,7 @@ std::string get_current_directory(){
  * @param directory: std::string
  * @returns: std::string
  */
-std::string format_current_directory(std::string directory){
+std::string format_current_directory(std::string directory) {
     ascii_colours::normal normal;
     ascii_colours::bold bold;
     std::string formatted_directory;
