@@ -20,4 +20,5 @@ void help() {
     std::cout << "cd - change directory" << std::endl;
     std::cout << "exit - exit the shell" << std::endl;
     std::cout << "Any other command will be ran by sh" << std::endl;
+    return;
 }
