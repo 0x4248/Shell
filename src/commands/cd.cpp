@@ -57,6 +57,8 @@ void cd_command(std::string dir) {
     dir = parse_input(dir);
     int status = change_dir(dir);
     if (status == DIR_NOT_FOUND) {
-        pr_error(dir + ": Could not change directory. Check if the directory exists.");
+        pr_error(
+            dir +
+            ": Could not change directory. Check if the directory exists.");
     }
 }
