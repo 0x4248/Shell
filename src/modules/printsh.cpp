@@ -1,7 +1,7 @@
 /* Shell (printsh.cpp)
  * A simple shell made in C++
  * Github: https://www.github.com/awesomelewis2007/shell
- * Licence: GPL-3.0
+ * Licence: GNU General Public License v3.0
  * By: Lewis Evans
  *
  * Shell verbose handler source file

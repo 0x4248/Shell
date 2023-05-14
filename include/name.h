@@ -1,7 +1,7 @@
 /* Shell (name.h)
  * A simple shell made in C++
  * Github: https://www.github.com/awesomelewis2007/shell
- * Licence: GPL-3.0
+ * Licence: GNU General Public License v3.0
  * By: Lewis Evans
  *
  * header for getting usernames and hostnames
