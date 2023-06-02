@@ -44,14 +44,17 @@ std::string exec(const char *cmd) {
  * @param input: std::string
  * @returns: void
  */
-void save_to_history(std::string input) {
-    std::ofstream history_file;
-    std::string history_path = "/home/" + get_username() + "/.shell_history";
-    history_file.open(history_path, std::ios::app);
-    history_file << input << std::endl;
-    history_file.close();
+void save_to_history(const std::string& input) {
+    const auto history_path = std::filesystem::path("/home") / get_username() / ".shell_history";
+    std::ofstream history_file(history_path, std::ios::app);
+    if (!history_file.is_open()) {
+        throw std::runtime_error("Failed to open history file");
+    }
+    history_file << input << '\n';
+    if (!history_file) {
+        throw std::runtime_error("Failed to write to history file");
+    }
 }
-
 /**
  * Shell main input runner
  * This function runs the command that
