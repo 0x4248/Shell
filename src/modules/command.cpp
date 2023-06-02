@@ -44,8 +44,9 @@ std::string exec(const char *cmd) {
  * @param input: std::string
  * @returns: void
  */
-void save_to_history(const std::string& input) {
-    const auto history_path = std::filesystem::path("/home") / get_username() / ".shell_history";
+void save_to_history(const std::string &input) {
+    const auto history_path =
+        std::filesystem::path("/home") / get_username() / ".shell_history";
     std::ofstream history_file(history_path, std::ios::app);
     if (!history_file.is_open()) {
         throw std::runtime_error("Failed to open history file");
