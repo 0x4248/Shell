@@ -13,6 +13,7 @@
 #include <unistd.h>
 
 #include "colour.h"
+#include "printsh.h"
 
 /**
  * Gets the current directory
@@ -21,7 +22,9 @@
 std::string get_current_directory() {
     char cwd[1024];
     cwd[1023] = '\0';
-    getcwd(cwd, 1023);
+    if (getcwd(cwd, 1023) == nullptr) {
+        pr_error("getcwd() failed to get the current directory");
+    }
     return cwd;
 }
 
