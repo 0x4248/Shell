@@ -29,7 +29,7 @@
  *          The function will return a vector with the following:
  *          ["arg1", "arg2", "-o", "arg3"]
  *
- * @param arg The arguments and options
+ * @param args The arguments and options
  * @returns: A vector of the arguments and options
  */
 std::vector<std::string> argparse(std::string args) {
