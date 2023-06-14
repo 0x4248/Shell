@@ -37,12 +37,16 @@ std::vector<std::string> argparse(std::string args) {
     std::string arg = "";
     for (int i = 0; i < args.length(); i++) {
         if (args[i] == ' ') {
-            parsed_args.push_back(arg);
-            arg = "";
+            if (arg != "") {
+                parsed_args.push_back(arg);
+                arg = "";
+            }
         } else {
             arg += args[i];
         }
     }
-    parsed_args.push_back(arg);
+    if (arg != "") {
+        parsed_args.push_back(arg);
+    }
     return parsed_args;
 }
