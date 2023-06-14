@@ -58,11 +58,14 @@ void print_welcome() {
  */
 int main(int argc, char *argv[]) {
     if (argc > 1) {
+        // Check for CLI arguments
         if (strcmp(argv[1], "-v") == 0) {
+            // If the first CLI argument is "-v", print the version
             std::cout << parse_version() << std::endl;
             return 0;
         }
         if (strcmp(argv[1], "--config") == 0) {
+            // If the first CLI argument is "--config", print the config
             std::cout << "Config:" << std::endl;
             std::cout << "Name:\t\t\t" << NAME << std::endl;
             std::cout << "Version:\t\t" << parse_version() << std::endl;
@@ -77,15 +80,18 @@ int main(int argc, char *argv[]) {
             return 0;
         }
     }
+    // Print the welcome message
     print_welcome();
     std::string output;
     std::string input;
     while (true) {
+        // Get user input
         std::cout << bold.green << get_username() << "@" << get_hostname()
                   << bold.reset << ":"
                   << format_current_directory(get_current_directory())
                   << bold.reset << "$ ";
         std::getline(std::cin, input);
+        // Run the user's input
         run_input(input);
     }
 }
