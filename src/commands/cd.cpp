@@ -46,9 +46,9 @@ int change_dir(std::string dir) {
     try {
         std::filesystem::current_path(dir);
         return 0;
-    } catch (std::filesystem::filesystem_error& e) {
+    } catch (std::filesystem::filesystem_error &e) {
         return DIR_NOT_FOUND;
-    } catch (std::exception& e) {
+    } catch (std::exception &e) {
         return ERROR;
     }
 }
