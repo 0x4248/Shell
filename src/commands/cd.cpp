@@ -62,6 +62,6 @@ void cd_command(std::string dir) {
             ": Could not change directory. Check if the directory exists.");
     }
     if (status == ERROR) {
-        pr_error("Could not change directory. An error occured.");
+        pr_error("Could not change directory. An error occurred.");
     }
 }
