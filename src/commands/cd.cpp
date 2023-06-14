@@ -43,13 +43,13 @@ std::string parse_input(std::string input) {
  */
 int change_dir(std::string dir) {
     /* Change the current working directory*/
-    if (!std::filesystem::exists(dir)) {
-        /* If the directory does not exist, then return an error*/
-        return DIR_NOT_FOUND;
-    } else {
-        /* If the directory exists, then change the current working directory*/
+    try {
         std::filesystem::current_path(dir);
         return 0;
+    } catch (std::filesystem::filesystem_error& e) {
+        return DIR_NOT_FOUND;
+    } catch (std::exception& e) {
+        return ERROR;
     }
 }
 
@@ -60,5 +60,8 @@ void cd_command(std::string dir) {
         pr_error(
             dir +
             ": Could not change directory. Check if the directory exists.");
+    }
+    if (status == ERROR) {
+        pr_error("Could not change directory. An error occured.");
     }
 }
