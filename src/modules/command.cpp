@@ -23,6 +23,7 @@
 #include "commands/cd.h"
 #include "commands/help.h"
 #include "commands/history.h"
+#include "commands/pr_log.h"
 
 std::string exec(const char *cmd) {
     std::array<char, 128> buffer;
@@ -80,6 +81,8 @@ void run_input(std::string input) {
         }
     } else if (input.substr(0, 7) == "history") {
         history_command(input);
+    } else if (input.substr(0, 6) == "pr_log") {
+        pr_log_command(input);
     } else {
         std::string output = exec(input.c_str());
         std::cout << output;
