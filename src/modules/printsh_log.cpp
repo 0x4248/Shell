@@ -17,18 +17,18 @@
 #include "printsh.h"
 #include "printsh_log.h"
 
-std::vector <std::string> printsh_log;
-std::vector <std::string> pr_error_log;
-std::vector <std::string> pr_warning_log;
-std::vector <std::string> pr_info_log;
-std::vector <std::string> pr_debug_log;
+std::vector<std::string> printsh_log;
+std::vector<std::string> pr_error_log;
+std::vector<std::string> pr_warning_log;
+std::vector<std::string> pr_info_log;
+std::vector<std::string> pr_debug_log;
 
 /**
  * pr_message_store
  * @message: std::string
  * @level: std::string
  * @returns: int
- * 
+ *
  * This function stores the message in the correct log vector
  * Levels:
  * - printsh
@@ -58,8 +58,8 @@ int pr_message_store(std::string message, std::string level) {
  * pr_log_read
  * @level: std::string
  * @returns: vector <std::string>
-*/
-std::vector <std::string> pr_log_read(std::string level) {
+ */
+std::vector<std::string> pr_log_read(std::string level) {
     if (level == "printsh") {
         return printsh_log;
     } else if (level == "error") {

@@ -15,7 +15,7 @@
  * @message: std::string
  * @level: std::string
  * @returns: int
- * 
+ *
  * This function stores the message in the correct log vector
  * Levels:
  * - printsh
@@ -30,5 +30,5 @@ int pr_message_store(std::string message, std::string level);
  * pr_log_read
  * @level: std::string
  * @returns: vector <std::string>
-*/
-std::vector <std::string> pr_log_read(std::string level);
+ */
+std::vector<std::string> pr_log_read(std::string level);

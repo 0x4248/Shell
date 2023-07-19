@@ -14,7 +14,7 @@
  * pr_log_command
  * @args: std::string
  * @returns: int
- * 
+ *
  * This function reads the printsh log using the pr_log_read function
  */
 int pr_log_command(std::string args);
