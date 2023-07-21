@@ -16,6 +16,7 @@
 #include "config/config.h"
 #include "printsh.h"
 #include "printsh_log.h"
+#include "err_no.h"
 
 std::vector<std::string> printsh_log;
 std::vector<std::string> pr_error_log;
@@ -49,8 +50,8 @@ int pr_message_store(std::string message, std::string level) {
     } else if (level == "debug") {
         pr_debug_log.push_back(message);
     } else {
-        /* If we dont know the level, return 1 */
-        return 1;
+        /* If we dont know the level, return ERROR */
+        return ERROR;
     }
     return 0;
 }
