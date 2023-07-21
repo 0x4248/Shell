@@ -49,6 +49,7 @@ int pr_message_store(std::string message, std::string level) {
     } else if (level == "debug") {
         pr_debug_log.push_back(message);
     } else {
+        /* If we dont know the level, return 1 */
         return 1;
     }
     return 0;
