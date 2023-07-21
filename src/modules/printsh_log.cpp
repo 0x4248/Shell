@@ -14,9 +14,9 @@
 
 #include "colour.h"
 #include "config/config.h"
+#include "err_no.h"
 #include "printsh.h"
 #include "printsh_log.h"
-#include "err_no.h"
 
 std::vector<std::string> printsh_log;
 std::vector<std::string> pr_error_log;
