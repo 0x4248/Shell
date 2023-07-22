@@ -66,7 +66,7 @@ int main(int argc, char *argv[]) {
         }
         if (strcmp(argv[1], "--config") == 0) {
             // If the first CLI argument is "--config", print the config
-            std::cout << "Config:" << std::endl;
+            std::cout << "Shell configuration:" << std::endl;
             std::cout << "Name:\t\t\t" << NAME << std::endl;
             std::cout << "Version:\t\t" << parse_version() << std::endl;
             std::cout << "Show welcome message:\t" << SHOW_WELCOME_MESSAGE
