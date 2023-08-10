@@ -32,20 +32,27 @@
  * @param args The arguments and options
  * @returns: A vector of the arguments and options
  */
-std::vector<std::string> argparse(std::string args) {
+std::vector<std::string> argparse(std::string args)
+{
     std::vector<std::string> parsed_args;
     std::string arg = "";
-    for (int i = 0; i < args.length(); i++) {
-        if (args[i] == ' ') {
-            if (arg != "") {
+    for (int i = 0; i < args.length(); i++)
+    {
+        if (args[i] == ' ')
+        {
+            if (arg != "")
+            {
                 parsed_args.push_back(arg);
                 arg = "";
             }
-        } else {
+        }
+        else
+        {
             arg += args[i];
         }
     }
-    if (arg != "") {
+    if (arg != "")
+    {
         parsed_args.push_back(arg);
     }
     return parsed_args;

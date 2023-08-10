@@ -15,7 +15,8 @@
  * Gets the username
  * @returns: std::string
  */
-std::string get_username() {
+std::string get_username()
+{
     char *username = getenv("USER");
     return username;
 }
@@ -24,7 +25,8 @@ std::string get_username() {
  * Gets the hostname
  * @returns: std::string
  */
-std::string get_hostname() {
+std::string get_hostname()
+{
     char hostname[1024];
     hostname[1023] = '\0';
     gethostname(hostname, 1023);

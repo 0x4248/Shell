@@ -20,10 +20,12 @@
  * @message: std::string
  * @returns: void
  */
-void printsh(std::string message) {
+void printsh(std::string message)
+{
     std::cout << message << std::endl;
     pr_message_store(message, "printsh");
-    if (PRINTSH_LOG_TO_FILE == true) {
+    if (PRINTSH_LOG_TO_FILE == true)
+    {
         std::ofstream log_file;
         log_file.open(PRINTSH_LOG_FILE_PATH, std::ios::app);
         log_file << message << std::endl;
@@ -36,11 +38,13 @@ void printsh(std::string message) {
  * @message: std::string
  * @returns: void
  */
-void pr_error(std::string message) {
+void pr_error(std::string message)
+{
     ascii_colours::normal normal;
     ascii_colours::bold bold;
     pr_message_store(message, "error");
-    if (LOG_LEVEL >= 1) {
+    if (LOG_LEVEL >= 1)
+    {
         std::cerr << bold.red << "Error: " << bold.reset;
         printsh(message);
     }
@@ -51,11 +55,13 @@ void pr_error(std::string message) {
  * @message: std::string
  * @returns: void
  */
-void pr_warning(std::string message) {
+void pr_warning(std::string message)
+{
     ascii_colours::normal normal;
     ascii_colours::bold bold;
     pr_message_store(message, "warning");
-    if (LOG_LEVEL >= 2) {
+    if (LOG_LEVEL >= 2)
+    {
         std::cerr << bold.yellow << "Warning: " << bold.reset;
         printsh(message);
     }
@@ -66,11 +72,13 @@ void pr_warning(std::string message) {
  * @message: std::string
  * @returns: void
  */
-void pr_info(std::string message) {
+void pr_info(std::string message)
+{
     ascii_colours::normal normal;
     ascii_colours::bold bold;
     pr_message_store(message, "info");
-    if (LOG_LEVEL >= 3) {
+    if (LOG_LEVEL >= 3)
+    {
         std::cerr << bold.blue << "Info: " << bold.reset;
         printsh(message);
     }
@@ -81,11 +89,13 @@ void pr_info(std::string message) {
  * @message: std::string
  * @returns: void
  */
-void pr_debug(std::string message) {
+void pr_debug(std::string message)
+{
     ascii_colours::normal normal;
     ascii_colours::bold bold;
     pr_message_store(message, "debug");
-    if (LOG_LEVEL >= 4) {
+    if (LOG_LEVEL >= 4)
+    {
         std::cerr << bold.magenta << "Debug: " << bold.reset;
         printsh(message);
     }
