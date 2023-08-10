@@ -38,30 +38,18 @@ std::vector<std::string> pr_debug_log;
  * - info
  * - debug
  */
-int pr_message_store(std::string message, std::string level)
-{
-    if (level == "printsh")
-    {
+int pr_message_store(std::string message, std::string level) {
+    if (level == "printsh") {
         printsh_log.push_back(message);
-    }
-    else if (level == "error")
-    {
+    } else if (level == "error") {
         pr_error_log.push_back(message);
-    }
-    else if (level == "warning")
-    {
+    } else if (level == "warning") {
         pr_warning_log.push_back(message);
-    }
-    else if (level == "info")
-    {
+    } else if (level == "info") {
         pr_info_log.push_back(message);
-    }
-    else if (level == "debug")
-    {
+    } else if (level == "debug") {
         pr_debug_log.push_back(message);
-    }
-    else
-    {
+    } else {
         /* If we dont know the level, return ERROR */
         return ERROR;
     }
@@ -73,30 +61,18 @@ int pr_message_store(std::string message, std::string level)
  * @level: std::string
  * @returns: vector <std::string>
  */
-std::vector<std::string> pr_log_read(std::string level)
-{
-    if (level == "printsh")
-    {
+std::vector<std::string> pr_log_read(std::string level) {
+    if (level == "printsh") {
         return printsh_log;
-    }
-    else if (level == "error")
-    {
+    } else if (level == "error") {
         return pr_error_log;
-    }
-    else if (level == "warning")
-    {
+    } else if (level == "warning") {
         return pr_warning_log;
-    }
-    else if (level == "info")
-    {
+    } else if (level == "info") {
         return pr_info_log;
-    }
-    else if (level == "debug")
-    {
+    } else if (level == "debug") {
         return pr_debug_log;
-    }
-    else
-    {
+    } else {
         return {};
     }
 }

@@ -27,8 +27,7 @@ ascii_colours::bold bold;
  * parse version
  * @returns: The version as a string
  */
-std::string parse_version()
-{
+std::string parse_version() {
     std::string version = std::to_string(VERSION_MAJOR) + "." +
                           std::to_string(VERSION_MINOR) + "." +
                           std::to_string(VERSION_PATCH) + " " + VERSION_NAME;
@@ -39,18 +38,13 @@ std::string parse_version()
  * Prints the welcome message
  * @returns: void
  */
-void print_welcome()
-{
-    if (SHOW_WELCOME_MESSAGE == true)
-    {
+void print_welcome() {
+    if (SHOW_WELCOME_MESSAGE == true) {
         std::cout << bold.green << "Welcome to " << NAME << " "
                   << parse_version() << bold.reset << std::endl;
-        if (CUSTOM_WELCOME_MESSAGE == false)
-        {
+        if (CUSTOM_WELCOME_MESSAGE == false) {
             std::cout << "Type 'help' for a list of commands" << std::endl;
-        }
-        else
-        {
+        } else {
             std::cout << CUSTOM_WELCOME_MESSAGE_TEXT << std::endl;
         }
     }
@@ -62,19 +56,15 @@ void print_welcome()
  * @param argv: char*
  * @returns: int
  */
-int main(int argc, char *argv[])
-{
-    if (argc > 1)
-    {
+int main(int argc, char *argv[]) {
+    if (argc > 1) {
         // Check for CLI arguments
-        if (strcmp(argv[1], "-v") == 0)
-        {
+        if (strcmp(argv[1], "-v") == 0) {
             // If the first CLI argument is "-v", print the version
             std::cout << parse_version() << std::endl;
             return 0;
         }
-        if (strcmp(argv[1], "--config") == 0)
-        {
+        if (strcmp(argv[1], "--config") == 0) {
             // If the first CLI argument is "--config", print the config
             std::cout << "Shell configuration:" << std::endl;
             std::cout << "Name:\t\t\t" << NAME << std::endl;
@@ -94,8 +84,7 @@ int main(int argc, char *argv[])
     print_welcome();
     std::string output;
     std::string input;
-    while (true)
-    {
+    while (true) {
         // Get user input
         std::cout << bold.green << get_username() << "@" << get_hostname()
                   << bold.reset << ":"
