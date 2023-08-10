@@ -8,12 +8,21 @@ A simple shell written in C++.
 
 ### 🛠️ Building using our Makefile
 
+First install the dependencies, then clone the repository and cd into it:
+```bash
+apt install gcc make
+```
 To build the shell, run the following commands:
 ```bash
 make
 ```
 
 ### 🛠️ Building using cmake
+
+First install the dependencies, then clone the repository and cd into it:
+```bash
+apt install gcc make cmake
+```
 
 To build the shell, run the following commands:
 ```bash
