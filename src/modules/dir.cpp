@@ -29,9 +29,9 @@ std::string get_current_directory() {
 }
 
 /**
- * Formats the current directory string to make
- * the top most folder coloured cyan and the rest
- * of the directory coloured blue.
+ * Formats the current working directory string to
+ * make the top most folder coloured cyan and the
+ * rest of the directory coloured blue.
  * @param directory: std::string
  * @returns: std::string
  */
