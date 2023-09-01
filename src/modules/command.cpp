@@ -50,11 +50,11 @@ void save_to_history(const std::string &input) {
         std::filesystem::path("/home") / get_username() / ".shell_history";
     std::ofstream history_file(history_path, std::ios::app);
     if (!history_file.is_open()) {
-        throw std::runtime_error("Failed to open history file");
+        pr_error("Failed to open history file");
     }
     history_file << input << '\n';
     if (!history_file) {
-        throw std::runtime_error("Failed to write to history file");
+        pr_error("Failed to write to history file");
     }
 }
 /**
