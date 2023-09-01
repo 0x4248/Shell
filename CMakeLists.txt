@@ -12,9 +12,11 @@ add_executable(shell
     src/modules/dir.cpp
     src/modules/name.cpp
     src/modules/printsh.cpp
+    src/modules/printsh_log.cpp
     src/commands/cd.cpp
     src/commands/help.cpp
     src/commands/history.cpp
+    src/commands/pr_log.cpp
 )
 
 # Set include directories
