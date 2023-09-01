@@ -42,6 +42,10 @@ To run the shell, run the following command:
 ./shell
 ```
 
+## ✅ OS Support
+
+Linux is fully supported. MacOS and Windows my work but are not fully tested. 
+
 ## 📝 License
 
 This project is licensed under the GNU General Public License v3.0 - see the [LICENCE](LICENCE) file for details.
