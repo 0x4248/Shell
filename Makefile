@@ -9,7 +9,7 @@ CC = g++
 CFLAGS = -std=c++17 -O2 -I include
 
 SRC = $(wildcard src/*.cpp) $(wildcard src/modules/*.cpp) $(wildcard src/commands/*.cpp)
-OBJ = $(SRC:.cpp=.o)
+OBJ = $(SRC:.cpp=.o)	
 
 BIN = bin
 OUTPUT = shell
@@ -40,9 +40,11 @@ clean_all: clean
 help:
 	@echo "Usage: make [target]"
 	@echo "Targets:"
-	@echo "  all:    Build the shell"
-	@echo "  clean:  Remove all build files"
-	@echo "  help:   Display this help message"
+	@echo "  all:        Build the shell"
+	@echo "  init:	      Create the bin folder"
+	@echo "  clean:      Removes the build files"
+	@echo "  clean_all   Removes the build files and the bin folder"
+	@echo "  help:       Display this help message"
 
 .SILENT:
 
