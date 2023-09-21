@@ -31,6 +31,8 @@ init:
 clean:
 	@echo "RM" $(OBJ) shell
 	@rm -f $(OBJ) shell
+	@echo "RM CMakeFiles CMakeCache.txt cmake_install.cmake"
+	@rm -rf CMakeFiles CMakeCache.txt cmake_install.cmake
 
 clean_all: clean
 	@echo "RM" $(BIN)
