@@ -30,7 +30,7 @@ target_compile_options(shell PRIVATE
     -O2
 )
 
-# Set link libraries
-target_link_libraries(shell PRIVATE
-    stdc++fs
-)
+# # Set link libraries
+# target_link_libraries(shell PRIVATE
+#     stdc++fs
+# )
