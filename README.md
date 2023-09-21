@@ -32,6 +32,13 @@ cmake ..
 make
 ```
 
+Or run cmake in the root directory:
+
+```bash
+cmake .
+make
+```
+
 > **Note**
 >
 > The makefile will be changed and should not be put into version control our .gitignore file will ignore it for you.
