@@ -29,8 +29,8 @@ init:
 	@mkdir -p $(BIN)
 
 clean:
-	@echo "RM" $(OBJ) shell
-	@rm -f $(OBJ) shell
+	@echo "RM" $(OBJ) $(BIN)/$(OUTPUT)
+	@rm -f $(OBJ) $(BIN)/$(OUTPUT)
 	@echo "RM CMakeFiles CMakeCache.txt cmake_install.cmake"
 	@rm -rf CMakeFiles CMakeCache.txt cmake_install.cmake
 
