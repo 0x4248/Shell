@@ -6,7 +6,7 @@
 # Main makefile
 
 CC = g++
-CFLAGS = -std=c++17 -O2 -I include
+CFLAGS = -std=c++17 -Os -I include
 
 SRC = $(wildcard src/*.cpp) $(wildcard src/modules/*.cpp) $(wildcard src/commands/*.cpp)
 OBJ = $(SRC:.cpp=.o)	
