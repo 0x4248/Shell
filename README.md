@@ -53,6 +53,6 @@ To run the shell, run the following command:
 
 Linux is fully supported. MacOS and Windows may work but are not fully tested. 
 
-## 📝 License
+## 📝 Licence
 
 This project is licensed under the GNU General Public License v3.0 - see the [LICENCE](LICENCE) file for details.
