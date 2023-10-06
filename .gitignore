@@ -45,3 +45,6 @@ Makefile
 
 # MacOS
 .DS_Store
+
+# Idea
+.idea/
