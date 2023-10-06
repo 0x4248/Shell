@@ -40,6 +40,7 @@ clean_all: clean
 	@rm -rf $(BIN)
 
 help:
+	@echo "Shell++ Makefile"
 	@echo "Usage: make [target]"
 	@echo "Targets:"
 	@echo "  all:        Build the shell"
