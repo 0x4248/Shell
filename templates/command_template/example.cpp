@@ -16,4 +16,7 @@
 /**
  * example_command - Prints hello [arg] using the printsh function
  */
-int example_command(std::string args) { printsh("hello " + args); }
+int example_command(std::string args) { 
+    printsh("hello " + args); 
+    return 0;
+}
