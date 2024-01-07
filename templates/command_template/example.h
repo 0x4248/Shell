@@ -10,7 +10,7 @@
 #include <string>
 
 /**
- * example_command - Prints hello [arg] using the printsh 
+ * example_command - Prints hello [arg] using the printsh
  * function and returns 0
  */
 int example_command(std::string args);
