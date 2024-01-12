@@ -17,10 +17,10 @@
 #include <string>
 
 #include "command.h"
-#include "name.h"
-#include "printsh.h"
 #include "config/config.h"
+#include "name.h"
 #include "os.h"
+#include "printsh.h"
 
 #include "commands/cd.h"
 #include "commands/help.h"
@@ -50,13 +50,14 @@ std::string exec(const char *cmd) {
 void save_to_history(const std::string &input) {
     std::string history_path;
     if (get_os_name() == "Windows") {
-        history_path = "C:\\Users\\" + get_username() + "\\" + HISTORY_FILE_PATH;
+        history_path =
+            "C:\\Users\\" + get_username() + "\\" + HISTORY_FILE_PATH;
     } else if (get_os_name() == "Mac OSX") {
         history_path = "/Users/" + get_username() + "/" + HISTORY_FILE_PATH;
     } else {
         history_path = "/home/" + get_username() + "/" + HISTORY_FILE_PATH;
     }
-   std::ofstream history_file(history_path, std::ios::app);
+    std::ofstream history_file(history_path, std::ios::app);
     if (!history_file.is_open()) {
         pr_error("Failed to open history file");
     }
@@ -99,5 +100,5 @@ void run_input(std::string input) {
     } else {
         std::string output = exec(input.c_str());
         std::cout << output;
-    }   
+    }
 }

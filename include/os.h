@@ -12,5 +12,5 @@
 /**
  * getOsName - Gets the name of the OS
  * @returns: std::string
-*/
+ */
 std::string get_os_name();

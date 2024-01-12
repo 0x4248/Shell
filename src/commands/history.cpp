@@ -17,8 +17,8 @@
 #include "argparse.h"
 #include "commands/history.h"
 #include "name.h"
-#include "printsh.h"
 #include "os.h"
+#include "printsh.h"
 
 #include "config/config.h"
 
@@ -34,7 +34,8 @@
 std::string get_history() {
     std::string history_path;
     if (get_os_name() == "Windows") {
-        history_path = "C:\\Users\\" + get_username() + "\\" + HISTORY_FILE_PATH;
+        history_path =
+            "C:\\Users\\" + get_username() + "\\" + HISTORY_FILE_PATH;
     } else if (get_os_name() == "Mac OSX") {
         history_path = "/Users/" + get_username() + "/" + HISTORY_FILE_PATH;
     } else {
