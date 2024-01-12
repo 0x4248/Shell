@@ -18,6 +18,7 @@
 #include "commands/history.h"
 #include "name.h"
 #include "printsh.h"
+#include "os.h"
 
 #include "config/config.h"
 
@@ -31,11 +32,18 @@
  * @returns: std::string
  */
 std::string get_history() {
-    std::string history_path =
-        "/home/" + get_username() + "/" + HISTORY_FILE_PATH;
+    std::string history_path;
+    if (get_os_name() == "Windows") {
+        history_path = "C:\\Users\\" + get_username() + "\\" + HISTORY_FILE_PATH;
+    } else if (get_os_name() == "Mac OSX") {
+        history_path = "/Users/" + get_username() + "/" + HISTORY_FILE_PATH;
+    } else {
+        history_path = "/home/" + get_username() + "/" + HISTORY_FILE_PATH;
+    }
     std::ifstream history_file(history_path);
     std::string line;
     std::string history;
+    pr_error("History file path: " + history_path);
     if (history_file.is_open()) {
         while (getline(history_file, line)) {
             history += line + "\n";

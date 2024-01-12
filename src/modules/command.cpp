@@ -19,6 +19,8 @@
 #include "command.h"
 #include "name.h"
 #include "printsh.h"
+#include "config/config.h"
+#include "os.h"
 
 #include "commands/cd.h"
 #include "commands/help.h"
@@ -46,11 +48,21 @@ std::string exec(const char *cmd) {
  * @returns: void
  */
 void save_to_history(const std::string &input) {
-    const auto history_path =
-        std::filesystem::path("/home") / get_username() / ".shell_history";
-    std::ofstream history_file(history_path, std::ios::app);
+    std::string history_path;
+    if (get_os_name() == "Windows") {
+        history_path = "C:\\Users\\" + get_username() + "\\" + HISTORY_FILE_PATH;
+    } else if (get_os_name() == "Mac OSX") {
+        history_path = "/Users/" + get_username() + "/" + HISTORY_FILE_PATH;
+    } else {
+        history_path = "/home/" + get_username() + "/" + HISTORY_FILE_PATH;
+    }
+   std::ofstream history_file(history_path, std::ios::app);
     if (!history_file.is_open()) {
         pr_error("Failed to open history file");
+    }
+    pr_info("history:" + input);
+    if (input == "") {
+        return;
     }
     history_file << input << '\n';
     if (!history_file) {
@@ -65,6 +77,7 @@ void save_to_history(const std::string &input) {
  * @returns: void
  */
 void run_input(std::string input) {
+    save_to_history(input);
     if (input == "help") {
         help();
     } else if (input == "exit") {
@@ -86,6 +99,5 @@ void run_input(std::string input) {
     } else {
         std::string output = exec(input.c_str());
         std::cout << output;
-    }
-    save_to_history(input);
+    }   
 }
