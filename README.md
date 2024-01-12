@@ -19,6 +19,8 @@ make
 
 ### 🛠️ Building using cmake
 
+#### Manually
+
 First install the dependencies, then clone the repository and cd into it:
 ```bash
 apt install gcc make cmake
@@ -41,7 +43,19 @@ make
 
 > **Note**
 >
-> The makefile will be changed and should not be put into version control our .gitignore file will ignore it for you.
+> The makefile will be changed and should not be put into version control
+
+#### Using the script
+
+First install the dependencies, then clone the repository and cd into it:
+```bash
+apt install gcc make cmake
+```
+
+To build the shell, run the following commands:
+```bash
+sh tools/build_cmake.sh
+```
 
 ## 📖 Usage
 To run the shell, run the following command:
