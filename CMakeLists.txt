@@ -17,6 +17,7 @@ add_executable(shell
     src/commands/help.cpp
     src/commands/history.cpp
     src/commands/pr_log.cpp
+    src/modules/os.cpp
 )
 
 # Set include directories
