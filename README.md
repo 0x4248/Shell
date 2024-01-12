@@ -57,6 +57,11 @@ To build the shell, run the following commands:
 sh tools/build_cmake.sh
 ```
 
+You can also clean the repository using the following command:
+```bash
+sh tools/clean_cmake.sh
+```
+
 ## 📖 Usage
 To run the shell, run the following command:
 ```bash
