@@ -48,3 +48,6 @@ Makefile
 
 # Idea
 .idea/
+
+# Cmake build
+build/
