@@ -44,7 +44,6 @@ std::string get_history() {
     std::ifstream history_file(history_path);
     std::string line;
     std::string history;
-    pr_error("History file path: " + history_path);
     if (history_file.is_open()) {
         while (getline(history_file, line)) {
             history += line + "\n";
