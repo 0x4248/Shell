@@ -42,7 +42,8 @@ std::string parse_version() {
 void print_welcome() {
     if (SHOW_WELCOME_MESSAGE == true) {
         std::cout << bold.green << "Welcome to " << NAME << " ("
-                  << parse_version() << " " <<  get_os_name() << ")" << bold.reset << std::endl;
+                  << parse_version() << " " << get_os_name() << ")"
+                  << bold.reset << std::endl;
         if (CUSTOM_WELCOME_MESSAGE == false) {
             std::cout << "Type 'help' for a list of commands" << std::endl;
         } else {
