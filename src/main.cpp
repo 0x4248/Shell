@@ -18,6 +18,7 @@
 #include "config/config.h"
 #include "dir.h"
 #include "name.h"
+#include "os.h"
 
 /* Define console colours */
 ascii_colours::normal normal;
@@ -40,8 +41,8 @@ std::string parse_version() {
  */
 void print_welcome() {
     if (SHOW_WELCOME_MESSAGE == true) {
-        std::cout << bold.green << "Welcome to " << NAME << " "
-                  << parse_version() << bold.reset << std::endl;
+        std::cout << bold.green << "Welcome to " << NAME << " ("
+                  << parse_version() << " " <<  get_os_name() << ")" << bold.reset << std::endl;
         if (CUSTOM_WELCOME_MESSAGE == false) {
             std::cout << "Type 'help' for a list of commands" << std::endl;
         } else {
