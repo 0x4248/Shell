@@ -3,7 +3,8 @@
 # Github:https://www.github.com/awesomelewis2007/shell
 # Licence: GNU General Public License v3.0
 # By: Lewis Evans
-# Main makefile
+#
+# Main makefile 
 
 CC = g++
 CFLAGS = -std=c++17 -Os -I include
