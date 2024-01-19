@@ -3,7 +3,12 @@
 # Github:https://www.github.com/awesomelewis2007/shell
 # Licence: GNU General Public License v3.0
 # By: Lewis Evans
+#
 # Main CMake file
+#
+# To build dont just run cmake . run sh tools/build_cmake.sh
+# this ennsures that the repository remains clean and doesnt 
+# overite the main makefile
 
 cmake_minimum_required(VERSION 3.10)
 
