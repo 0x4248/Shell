@@ -32,7 +32,7 @@ ascii_colours::bold bold;
 std::string parse_version() {
     std::string version = std::to_string(VERSION_MAJOR) + "." +
                           std::to_string(VERSION_MINOR) + "." +
-                          std::to_string(VERSION_PATCH) + " " + VERSION_NAME;\
+                          std::to_string(VERSION_PATCH) + " " + VERSION_NAME;
     return version;
 }
 
