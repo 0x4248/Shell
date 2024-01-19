@@ -18,15 +18,15 @@ OUTPUT = shell
 all: init shell
 
 shell: $(OBJ)
-	@echo "LD $@"
+	@echo "LD\t$@"
 	$(CC) $(CFLAGS) -o $(BIN)/$(OUTPUT) $(OBJ)
 
 %.o: %.cpp
-	@echo "CC $@"
+	@echo "CC\t$@"
 	$(CC) $(CFLAGS) -o $@ -c $<
 
 init:
-	@echo "MKDIR" $(BIN)
+	@echo "MKDIR\t" $(BIN)
 	@mkdir -p $(BIN)
 
 clean:
