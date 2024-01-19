@@ -26,12 +26,13 @@ ascii_colours::bold bold;
 
 /**
  * parse version
+ * Gets the version from the config and returns it as a string
  * @returns: The version as a string
  */
 std::string parse_version() {
     std::string version = std::to_string(VERSION_MAJOR) + "." +
                           std::to_string(VERSION_MINOR) + "." +
-                          std::to_string(VERSION_PATCH) + " " + VERSION_NAME;
+                          std::to_string(VERSION_PATCH) + " " + VERSION_NAME;\
     return version;
 }
 
