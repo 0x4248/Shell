@@ -1,0 +1,105 @@
+# Shell (Makefile)
+# A simple shell made in C++
+# Github:https://www.github.com/awesomelewis2007/shell
+# Licence: GNU General Public License v3.0
+# By: Lewis Evans
+#
+# Main configuration file
+
+menu "Version and name"
+
+config VERSION_MAJOR
+    int "version major number"
+    default 1
+    help
+      This is the version number of the shell.
+
+config VERSION_MINOR
+    int "version minor number"
+    default 4
+    help
+      This is the minor version number of the shell.
+
+config VERSION_PATCH
+    int "version patch number"
+    default 2
+    help
+      This is the patch version number of the shell.
+
+config VERSION_NAME
+    string "version name"
+    default "Beta"
+    help
+      This is the name of the version of the shell.
+
+config NAME
+    string "Name of the shell"
+    default "Shell"
+    help
+      This is the name of the shell.
+
+endmenu
+
+menu "Welcome message"
+
+config SHOW_WELCOME_MESSAGE
+    bool "Show welcome message"
+    default y
+    help
+      This option controls whether the welcome message is shown or not.
+    
+
+config CUSTOM_WELCOME_MESSAGE
+    bool "Custom welcome message"
+    default n
+    help
+      This option controls whether the welcome message is custom or not.
+
+config CUSTOM_WELCOME_MESSAGE_TEXT
+    string "Custom welcome message text"
+    default "Type 'help' for a list of commands."
+    depends on CUSTOM_WELCOME_MESSAGE
+    help
+      This is the text of the custom welcome message.
+
+endmenu
+
+menu "Printsh"
+
+config LOG_LEVEL
+    int "Log level"
+    default 2
+    help
+      This is the log level of the shell.
+
+      0 - no logging
+      1 - errors
+      2 - errors and warnings
+      3 - errors, warnings and info
+      4 - errors, warnings, info and debug
+    
+config PRINTSH_LOG_TO_FILE
+    bool "Log to file"
+    default n
+    help
+      This option controls whether the shell logs to a file or not.
+
+config PRINTSH_LOG_FILE
+    string "Log file"
+    default "shell.log"
+    depends on PRINTSH_LOG_TO_FILE
+    help
+      This is the name of the log file.
+
+endmenu
+
+menu "History"
+
+config HISTORY_FILE_PATH
+    string "History file path"
+    default ".shell_history"
+    default y
+    help
+      This option controls whether the shell has a history or not.
+
+endmenu

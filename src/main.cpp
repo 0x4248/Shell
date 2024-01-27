@@ -20,6 +20,28 @@
 #include "name.h"
 #include "os.h"
 
+/* Just in case we dont compile these*/
+#ifndef CONFIG_WELCOME_MESSAGE
+#define CONFIG_WELCOME_MESSAGE false
+#endif
+
+#ifndef CONFIG_CUSTOM_WELCOME_MESSAGE
+#define CONFIG_CUSTOM_WELCOME_MESSAGE false
+#endif
+
+#ifndef CONFIG_CUSTOM_WELCOME_MESSAGE_TEXT
+#define CONFIG_CUSTOM_WELCOME_MESSAGE_TEXT "Type 'help' for a list of commands"
+#endif
+
+#ifndef CONFIG_PRINTSH_LOG_TO_FILE
+#define CONFIG_PRINTSH_LOG_TO_FILE false
+#endif
+
+
+#ifndef CONFIG_PRINTSH_LOG_FILE_PATH
+#define CONFIG_PRINTSH_LOG_FILE_PATH "shell.log"
+#endif
+
 /* Define console colours */
 ascii_colours::normal normal;
 ascii_colours::bold bold;
@@ -30,9 +52,9 @@ ascii_colours::bold bold;
  * @returns: The version as a string
  */
 std::string parse_version() {
-    std::string version = std::to_string(VERSION_MAJOR) + "." +
-                          std::to_string(VERSION_MINOR) + "." +
-                          std::to_string(VERSION_PATCH) + " " + VERSION_NAME;
+    std::string version = std::to_string(CONFIG_VERSION_MAJOR) + "." +
+                          std::to_string(CONFIG_VERSION_MINOR) + "." +
+                          std::to_string(CONFIG_VERSION_PATCH) + " " + CONFIG_VERSION_NAME;
     return version;
 }
 
@@ -41,14 +63,14 @@ std::string parse_version() {
  * @returns: void
  */
 void print_welcome() {
-    if (SHOW_WELCOME_MESSAGE == true) {
-        std::cout << bold.green << "Welcome to " << NAME << " ("
+    if (CONFIG_WELCOME_MESSAGE  == true) {
+        std::cout << bold.green << "Welcome to " << CONFIG_NAME << " ("
                   << parse_version() << " " << get_os_name() << ")"
                   << bold.reset << std::endl;
-        if (CUSTOM_WELCOME_MESSAGE == false) {
+        if (CONFIG_CUSTOM_WELCOME_MESSAGE == false) {
             std::cout << "Type 'help' for a list of commands" << std::endl;
         } else {
-            std::cout << CUSTOM_WELCOME_MESSAGE_TEXT << std::endl;
+            std::cout << CONFIG_CUSTOM_WELCOME_MESSAGE_TEXT << std::endl;
         }
     }
 }
@@ -70,15 +92,15 @@ int main(int argc, char *argv[]) {
         if (strcmp(argv[1], "--config") == 0) {
             // If the first CLI argument is "--config", print the config
             std::cout << "Shell configuration:" << std::endl;
-            std::cout << "Name:\t\t\t" << NAME << std::endl;
+            std::cout << "Name:\t\t\t" << CONFIG_NAME << std::endl;
             std::cout << "Version:\t\t" << parse_version() << std::endl;
-            std::cout << "Show welcome message:\t" << SHOW_WELCOME_MESSAGE
+            std::cout << "Show welcome message:\t" << CONFIG_WELCOME_MESSAGE 
                       << std::endl;
-            std::cout << "Log level:\t\t" << LOG_LEVEL << std::endl;
-            std::cout << "Log to file:\t\t" << PRINTSH_LOG_TO_FILE << std::endl;
-            std::cout << "Log file path:\t\t" << PRINTSH_LOG_FILE_PATH
+            std::cout << "Log level:\t\t" << CONFIG_LOG_LEVEL << std::endl;
+            std::cout << "Log to file:\t\t" << CONFIG_PRINTSH_LOG_TO_FILE << std::endl;
+            std::cout << "Log file path:\t\t" << CONFIG_PRINTSH_LOG_FILE_PATH
                       << std::endl;
-            std::cout << "History file path:\t" << HISTORY_FILE_PATH
+            std::cout << "History file path:\t" << CONFIG_HISTORY_FILE_PATH
                       << std::endl;
             return 0;
         }

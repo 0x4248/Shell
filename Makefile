@@ -50,6 +50,14 @@ help:
 	@echo "  clean_all   Removes the build files and the bin folder"
 	@echo "  help:       Display this help message"
 
+
+menuconfig:
+	menuconfig
+	@echo "GEN\t.config"
+	genconfig
+	@echo "MV\tinclude/config/config.h"
+	mv config.h include/config/config.h
+
 .SILENT:
 
 .PHONY: all clean
