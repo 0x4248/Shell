@@ -37,9 +37,11 @@ std::string get_history() {
         history_path =
             "C:\\Users\\" + get_username() + "\\" + CONFIG_HISTORY_FILE_PATH;
     } else if (get_os_name() == "Mac OSX") {
-        history_path = "/Users/" + get_username() + "/" + CONFIG_HISTORY_FILE_PATH;
+        history_path =
+            "/Users/" + get_username() + "/" + CONFIG_HISTORY_FILE_PATH;
     } else {
-        history_path = "/home/" + get_username() + "/" + CONFIG_HISTORY_FILE_PATH;
+        history_path =
+            "/home/" + get_username() + "/" + CONFIG_HISTORY_FILE_PATH;
     }
     std::ifstream history_file(history_path);
     std::string line;

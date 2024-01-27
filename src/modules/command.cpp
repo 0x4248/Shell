@@ -53,9 +53,11 @@ void save_to_history(const std::string &input) {
         history_path =
             "C:\\Users\\" + get_username() + "\\" + CONFIG_HISTORY_FILE_PATH;
     } else if (get_os_name() == "Mac OSX") {
-        history_path = "/Users/" + get_username() + "/" + CONFIG_HISTORY_FILE_PATH;
+        history_path =
+            "/Users/" + get_username() + "/" + CONFIG_HISTORY_FILE_PATH;
     } else {
-        history_path = "/home/" + get_username() + "/" + CONFIG_HISTORY_FILE_PATH;
+        history_path =
+            "/home/" + get_username() + "/" + CONFIG_HISTORY_FILE_PATH;
     }
     std::ofstream history_file(history_path, std::ios::app);
     if (!history_file.is_open()) {
