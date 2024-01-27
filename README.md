@@ -62,6 +62,20 @@ You can also clean the repository using the following command:
 sh tools/clean_cmake.sh
 ```
 
+## ⚙️ Configuration
+
+This project uses [Kconfig](https://www.kernel.org/doc/html/latest/kbuild/kconfig-language.html) to configure the shell. You will need to install kconfiglib to configure the shell.
+
+To install kconfiglib, run the following command:
+```bash
+pip3 install kconfiglib
+```
+
+To configure the shell, run the following command:
+```bash
+make menuconfig
+```
+
 ## 📖 Usage
 To run the shell, run the following command:
 ```bash
