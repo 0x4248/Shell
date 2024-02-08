@@ -18,7 +18,6 @@
 #include <vector>
 
 #include "argparse.h"
-
 #include "config/config.h"
 #include "printsh.h"
 

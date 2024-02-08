@@ -13,7 +13,6 @@
 #include "argparse.h"
 #include "printsh.h"
 #include "printsh_log.h"
-
 #include "config/config.h"
 
 /**

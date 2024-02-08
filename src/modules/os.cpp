@@ -7,9 +7,9 @@
  * OS Determination source file
  */
 
-#include "os.h"
 #include <string>
 
+#include "os.h"
 /**
  * getOsName - Gets the name of the OS
  * @returns: std::string

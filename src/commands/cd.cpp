@@ -12,7 +12,6 @@
 
 #include "err_no.h"
 #include "printsh.h"
-
 #include "commands/cd.h"
 
 /**

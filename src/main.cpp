@@ -13,7 +13,6 @@
 #include <unistd.h>
 
 #include "colour.h"
-
 #include "command.h"
 #include "config/config.h"
 #include "dir.h"
