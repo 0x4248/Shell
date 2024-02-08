@@ -20,7 +20,11 @@
 #include "name.h"
 #include "os.h"
 
-/* Just in case we dont compile these*/
+/* 
+ * Just in case we dont compile these in the config
+ * we will define them here with default values
+*/ 
+
 #ifndef CONFIG_WELCOME_MESSAGE
 #define CONFIG_WELCOME_MESSAGE false
 #endif
