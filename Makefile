@@ -49,7 +49,7 @@ help:
 	@echo "  clean:      Removes the build files"
 	@echo "  clean_all   Removes the build files and the bin folder"
 	@echo "  help:       Display this help message"
-
+	@echo "  menuconfig: Open the menuconfig and generate the config.h file"
 
 menuconfig:
 	menuconfig
