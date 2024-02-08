@@ -84,7 +84,7 @@ To run the shell, run the following command:
 
 ## ✅ OS Support
 
-Linux is fully supported. MacOS and Windows may work but are not fully tested. 
+Linux and MacOS are supported. Windows is not supported.
 
 ## 📝 Licence
 
