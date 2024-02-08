@@ -17,14 +17,14 @@
 #include <string>
 
 #include "command.h"
-#include "config/config.h"
-#include "name.h"
-#include "os.h"
-#include "printsh.h"
 #include "commands/cd.h"
 #include "commands/help.h"
 #include "commands/history.h"
 #include "commands/pr_log.h"
+#include "config/config.h"
+#include "name.h"
+#include "os.h"
+#include "printsh.h"
 
 std::string exec(const char *cmd) {
     std::array<char, 128> buffer;

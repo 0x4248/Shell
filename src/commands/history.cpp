@@ -16,10 +16,10 @@
 
 #include "argparse.h"
 #include "commands/history.h"
+#include "config/config.h"
 #include "name.h"
 #include "os.h"
 #include "printsh.h"
-#include "config/config.h"
 
 /**
  * get_history - Gets the shell history

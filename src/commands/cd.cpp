@@ -10,9 +10,9 @@
 #include <filesystem>
 #include <iostream>
 
+#include "commands/cd.h"
 #include "err_no.h"
 #include "printsh.h"
-#include "commands/cd.h"
 
 /**
  * Parse the cd arguments

@@ -11,9 +11,9 @@
 #include <vector>
 
 #include "argparse.h"
+#include "config/config.h"
 #include "printsh.h"
 #include "printsh_log.h"
-#include "config/config.h"
 
 /**
  * pr_log_command
