@@ -21,3 +21,6 @@
 
 /* Command error codes */
 #define COMMAND_NOT_FOUND 7
+
+/* Function error codes */
+#define EINVAL 8

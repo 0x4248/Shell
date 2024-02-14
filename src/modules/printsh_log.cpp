@@ -32,7 +32,7 @@ std::vector<std::string> pr_debug_log;
  *
  * This function stores the message in the correct log vector
  * Levels:
- * - printsh
+ * - printsh (Standard output)
  * - error
  * - warning
  * - info
@@ -51,7 +51,7 @@ int pr_message_store(std::string message, std::string level) {
         pr_debug_log.push_back(message);
     } else {
         /* If we dont know the level, return ERROR */
-        return ERROR;
+        return EINVAL;
     }
     return 0;
 }
