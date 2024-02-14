@@ -18,7 +18,7 @@
  *
  * This function stores the message in the correct log vector
  * Levels:
- * - printsh
+ * - printsh (Standard output)
  * - error
  * - warning
  * - info
