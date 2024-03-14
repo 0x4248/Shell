@@ -48,13 +48,13 @@ help:
 	@echo "Usage: make [target]"
 	@echo "Targets:"
 	@echo "  all:        Build the shell"
-	@echo "  init:	      Create the bin folder"
+	@echo "  init:	     Create the bin folder"
 	@echo "  clean:      Removes the build files"
 	@echo "  clean_all   Removes the build files and the bin folder"
 	@echo "  help:       Display this help message"
 	@echo "  menuconfig: Open the menuconfig and generate the config.h file"
 	@echo "  version:    Get the version of the shell"
-	
+
 menuconfig:
 	menuconfig
 	@echo "GEN\t.config"
