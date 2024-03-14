@@ -15,6 +15,8 @@ OBJ = $(SRC:.cpp=.o)
 BIN = bin
 OUTPUT = shell
 
+PYTHON = python3
+
 all: init shell
 
 shell: $(OBJ)
@@ -42,6 +44,7 @@ clean_all: clean
 
 help:
 	@echo "Shell++ Makefile"
+	@echo "Version:" $(shell $(PYTHON) tools/get_version.py)
 	@echo "Usage: make [target]"
 	@echo "Targets:"
 	@echo "  all:        Build the shell"
@@ -58,6 +61,9 @@ menuconfig:
 	@echo "MV\tinclude/config/config.h"
 	mv config.h include/config/config.h
 
+version:
+	@$(PYTHON) tools/get_version.py
+
 .SILENT:
 
-.PHONY: all clean
+.PHONY: all clean clean_all help menuconfig version
