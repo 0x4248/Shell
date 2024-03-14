@@ -53,7 +53,8 @@ help:
 	@echo "  clean_all   Removes the build files and the bin folder"
 	@echo "  help:       Display this help message"
 	@echo "  menuconfig: Open the menuconfig and generate the config.h file"
-
+	@echo "  version:    Get the version of the shell"
+	
 menuconfig:
 	menuconfig
 	@echo "GEN\t.config"
