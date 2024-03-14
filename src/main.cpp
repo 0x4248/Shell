@@ -81,7 +81,7 @@ void print_welcome() {
 /**
  * Main entry point for shell
  * @param argc: int
- * @param argv: char*89
+ * @param argv: char
  * @returns: int
  */
 int main(int argc, char *argv[]) {
