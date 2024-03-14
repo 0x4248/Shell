@@ -5,6 +5,9 @@ A simple shell written in C++.
 ### 📝 Dependencies
 - [GCC](https://gcc.gnu.org/)
 - [Make](https://www.gnu.org/software/make/)
+- [Bash](https://www.gnu.org/software/bash/)
+- [CMake](https://cmake.org/)
+- [Python3](https://www.python.org/)
 
 ### 🛠️ Building using our Makefile
 
