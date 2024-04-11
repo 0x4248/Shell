@@ -1,8 +1,8 @@
 # Shell (get_version.py)
 # A simple shell made in C++
-# Github: https://www.github.com/lewisevans2007/shell
+# Github: https://www.github.com/0x4248/shell
 # Licence: GNU General Public License v3.0
-# By: Lewis Evans
+# By: 0x4248
 #
 # This file returns the version of the shell from the config.h file
 # This program is called from the Makefile to get the version of the shell

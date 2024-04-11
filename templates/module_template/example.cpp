@@ -1,8 +1,8 @@
 /* Shell (example.cpp)
  * A simple shell made in C++
- * Github: https://www.github.com/lewisevans2007/shell
+ * Github: https://www.github.com/0x4248/shell
  * Licence: GNU General Public License v3.0
- * By: Lewis Evans
+ * By: 0x4248
  *
  * Shell example module source file
  */
